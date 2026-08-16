@@ -80,6 +80,10 @@ app.use((req, res, next) => {
     res.locals.error = req.flash("error");
     next();
 });
+// root route — direct listings pe redirect
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 // routes
 app.use("/listings", listings);
