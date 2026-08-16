@@ -1,0 +1,34 @@
+<% if (locals.success && success.length > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        <strong>Success!</strong> <%= success[0] %>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close">
+        </button>
+    </div>
+<% } %>
+
+
+
+<% if (locals.error && error.length > 0) { %>
+
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+
+        <strong>Error!</strong> <%= error[0] %>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close">
+        </button>
+
+    </div>
+
+<% } %>

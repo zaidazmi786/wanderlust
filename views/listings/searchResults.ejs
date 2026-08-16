@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") %>
+
+
+
+
+
+
+<div class="container py-5">
+
+    <h3 class="mb-4">
+        Search results for "<%= searchTerm %>"
+    </h3>
+
+    <% if (results.length === 0) { %>
+
+        <p class="text-muted">
+            <p>We couldn't find anything for "<%= searchTerm %>". Try checking the spelling or searching a different place.</p>
+        </p>
+
+    <% } else { %>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <% for (let listing of results) { %>
+
+                <div class="col">
+                    <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image"
+                                style="height: 220px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= listing.title %></h5>
+                                <p class="card-text text-muted mb-1"><%= listing.location %>, <%= listing.contry %></p>
+                                <p class="card-text fw-bold">₹ <%= listing.price.toLocaleString("en-IN") %> / night</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            <% } %>
+
+        </div>
+
+    <% } %>
+
+</div>
+
+
+
+
