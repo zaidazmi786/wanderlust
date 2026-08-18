@@ -126,8 +126,6 @@ CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
 ```
 
-> Never upload your `.env` file or expose your API keys publicly.
-
 ### 5. Start the application
 
 For development:
